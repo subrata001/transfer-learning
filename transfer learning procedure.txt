@@ -1,0 +1,43 @@
+1. Accessing pre-trained ResNet's:
+
+We can access any resnet (ex: resnet18) by typing the keyword on command window.
+Initially, the models are not saved in MATLAB.
+Therefore, the command window will show ADD_ON EXPLORER message, which on clicking will be redirected to a page containing resnet18 or any resnets.
+Then, click on install and save the pre-trained model.
+
+keywords: resnet18, resnet50, resnet101
+
+*****************************************************************************************************************
+
+2. Train the model with a new dataset to perform new classification task:
+
+Train any pretrained models using the MATLAB Code given in ResNet.m file.
+
+First, load ur dataset using imageDatastore function.
+Split the dataset into training, validation and testing.
+Then load the pre-trained model using : "net=resnet50;" 
+   **Note : replace resnet50 by resnet18 and resnet101 for training ResNet's -18 and -101.
+Follow the rest of the code from ResNet.m file for all the three models.
+
+*******************************************************************************************************************
+
+3. Test the model:
+
+The trained models are saved in a MATLAB data file as follows:
+
+For testing ResNet-101 : Use Trained_ResNet101.mat file
+For testing ResNet-50 : Use Trained_ResNet50.mat file
+For testing ResNet-18 : Use Trained_ResNet50.mat file
+...........................................................
+Use the following steps to test the model:
+1) Load the saved model from .mat file mentioned above.
+2) Use the following code to test the model
+    
+    [y, p]=classify(net2,imdsTrain3);
+
+3) Use the following code to get the accuracy of the model
+    
+    Testaccuracy=mean(y==imdsTrain3.Labels);
+
+ 
+   
